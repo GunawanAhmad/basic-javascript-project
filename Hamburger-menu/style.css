@@ -1,0 +1,120 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	overflow-x: hidden;
+}
+
+nav {
+	display: flex;
+	background-color: #4f8a8b;
+	justify-content: space-around;
+	/* padding: 20px 0; */
+	color: #ffcb74;
+	height: 50px;
+	align-items: center;
+}
+
+nav .logo {
+	font-family: 'Pacifico', cursive;
+	letter-spacing: 3px;
+}
+
+nav ul {
+	display: flex;
+	list-style: none;
+	width: 40%;
+	justify-content: space-between;
+}
+
+nav ul li a {
+	color: #f4f6ff;
+	text-decoration: none;
+}
+nav ul li a:hover {
+	color: #ffcb74;
+}
+
+/*hamburger menu*/
+.menu-toogle input {
+	position: absolute;
+	width: 40px;
+	height: 28px;
+	left: -5.5px;
+	top: -3px;
+	opacity: 0;
+	cursor: pointer;
+	z-index: 2;
+}
+.menu-toogle {
+	display: none;
+	flex-direction: column;
+	height: 15px;
+	justify-content: space-between;
+	position: relative;
+}
+.menu-toogle span {
+	display: block;
+	width: 28px;
+	height: 3px;
+	background-color: #ffcb74;
+	border-radius: 3px;
+	transition: all 0.5s ease;
+}
+
+/*hamburger menu animation */
+
+.menu-toogle span:nth-child(2) {
+	transform-origin: 0 0;
+}
+
+.menu-toogle input:checked ~ span:nth-child(2) {
+	transform: rotate(45deg) translate(-4px, -4px);
+}
+
+.menu-toogle span:nth-child(4) {
+	transform-origin: 0 100%;
+}
+
+.menu-toogle input:checked ~ span:nth-child(4) {
+	transform: rotate(-45deg) translate(-1px, 0);
+}
+.menu-toogle input:checked ~ span:nth-child(3) {
+	transform: scale(0);
+}
+
+/*tablet size*/
+@media screen and (max-width: 900px) {
+	nav ul {
+		width: 60%;
+	}
+}
+
+/*mobile size*/
+@media screen and (max-width: 576px) {
+	nav ul {
+		position: absolute;
+		right: 0;
+		flex-direction: column;
+		top: 0;
+		height: 100vh;
+		align-items: center;
+		justify-content: space-evenly;
+		background-color: #4f8a8b;
+		z-index: -1;
+		transform: translateX(100%);
+		transition: all 1s ease;
+		opacity: 0;
+	}
+	.menu-toogle {
+		display: flex;
+	}
+	nav ul.slide {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
