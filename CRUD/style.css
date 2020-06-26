@@ -1,0 +1,60 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Poppins;
+}
+.container {
+	position: absolute;
+	left: 50%;
+	margin-top: 50px;
+	transform: translateX(-50%);
+}
+h1 {
+	text-align: center;
+	color: #16817a;
+}
+li {
+	display: flex;
+	justify-content: space-between;
+	margin: 10px 0;
+	align-items: center;
+	/* border: 1px solid black; */
+	height: 35px;
+}
+li p {
+	flex: 1;
+}
+input {
+	border: 2px solid #16817a;
+	height: 34px;
+}
+
+.add {
+	background-color: #16817a;
+	border: none;
+	height: 34px;
+	width: 35px;
+	color: white;
+	cursor: pointer;
+}
+
+.fa-trash,
+.fa-edit,
+.fa-window-close {
+	pointer-events: none;
+}
+.delete {
+	background-color: rgb(206, 64, 64);
+}
+
+.edit,
+.delete,
+.newVal,
+.cancel {
+	padding: 7px;
+	background-color: #16817a;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
