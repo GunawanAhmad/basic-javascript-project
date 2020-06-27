@@ -1,0 +1,46 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Poppins;
+}
+
+.img-container {
+	width: 650px;
+	margin: auto;
+	overflow: hidden;
+	position: relative;
+}
+.img-slide {
+	display: flex;
+	width: 650px;
+	height: 400px;
+}
+h1 {
+	text-align: center;
+	margin: 30px auto;
+}
+
+img {
+	width: 650px;
+}
+
+#prevBtn {
+	position: absolute;
+	z-index: 10;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: white;
+	font-size: 25px;
+}
+
+#nextBtn {
+	position: absolute;
+	z-index: 10;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: white;
+	font-size: 25px;
+}
