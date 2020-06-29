@@ -11,10 +11,11 @@ const img = document.getElementById('pic')
 
 
 btn.addEventListener('click', ()=> {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid={MY_API_KEY}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid={API KEY from home.openweathermap.org}`)
     .then(res => res.json())
     .then(respon => {
-        console.log(respon)
+        img.className = ''
+        img.classList.add('fas')
         container.style.opacity = '1'
         temp.innerHTML = Math.round(respon.main.temp - 273.15) + '<span>&#8451;</span>'
         city.innerText = respon.name
