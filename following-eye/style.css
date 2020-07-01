@@ -1,0 +1,68 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	height: 100vh;
+	background-color: lightsalmon;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.eyes {
+	display: flex;
+}
+
+.left,
+.right {
+	height: 150px;
+	width: 150px;
+	background-color: white;
+	border-radius: 50%;
+	margin-right: 50px;
+	position: relative;
+	animation: blink 2.5s infinite;
+	overflow: hidden;
+}
+
+.pupil {
+	height: 70px;
+	width: 70px;
+	background-color: black;
+	border-radius: 50%;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.light {
+	background-color: white;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	position: absolute;
+	left: 15%;
+	top: 15%;
+	transform: translate(-10%, -10%);
+}
+
+@keyframes blink {
+	0% {
+		height: 150px;
+	}
+	35% {
+		height: 150px;
+	}
+	45% {
+		height: 0px;
+	}
+	55% {
+		height: 150px;
+	}
+	100% {
+		height: 150px;
+	}
+}
