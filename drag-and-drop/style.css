@@ -1,0 +1,34 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: mediumaquamarine;
+}
+header {
+	text-align: center;
+	margin: 20px 0;
+}
+.lists {
+	display: flex;
+	justify-content: space-evenly;
+}
+.list {
+	height: 100%;
+	min-width: 300px;
+	min-height: 500px;
+	background-color: rgba(0, 0, 0, 0.3);
+	margin: 0 20px;
+	padding: 0 10px;
+	border-radius: 10px;
+}
+
+.list-item {
+	background-color: white;
+	margin: 10px 0;
+	border-radius: 6px;
+	text-align: center;
+	height: 35px;
+	line-height: 30px;
+}
