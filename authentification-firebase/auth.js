@@ -1,3 +1,17 @@
+
+auth.onAuthStateChanged(user => {
+    if(user) {
+        setupUI(user)
+        db.collection('guides').get().then(res => {
+            setupGuides(res.docs)
+        }) 
+    } else {
+        setupUI(null)
+        setupGuides([])
+    }
+})
+
+
 const signUp = document.querySelector('#signup-form')
 signUp.addEventListener('submit', function(e) {
     e.preventDefault()
@@ -29,7 +43,6 @@ logIn.addEventListener('submit', function(e) {
     const pass = logIn['login-password'].value
 
     auth.signInWithEmailAndPassword(email, pass).then(cred => {
-        console.log(cred.user)
         const modal = document.querySelector('#modal-login')
         M.Modal.getInstance(modal).close()
         signUp.reset()
