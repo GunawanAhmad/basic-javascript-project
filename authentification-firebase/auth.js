@@ -10,5 +10,28 @@ signUp.addEventListener('submit', function(e) {
         M.Modal.getInstance(modal).close()
         signUp.reset()
     })
-    
+})
+
+
+const logOut = document.querySelector('#logout')
+logOut.addEventListener('click', function(e) {
+    e.preventDefault()
+    auth.signOut().then(result => {
+        console.log('Log Out Succes')
+    })
+})
+
+
+const logIn = document.querySelector('#login-form')
+logIn.addEventListener('submit', function(e) {
+    e.preventDefault()
+    const email = logIn['login-email'].value
+    const pass = logIn['login-password'].value
+
+    auth.signInWithEmailAndPassword(email, pass).then(cred => {
+        console.log(cred.user)
+        const modal = document.querySelector('#modal-login')
+        M.Modal.getInstance(modal).close()
+        signUp.reset()
+    })
 })
