@@ -2,8 +2,8 @@
 auth.onAuthStateChanged(user => {
     if(user) {
         setupUI(user)
-        db.collection('guides').get().then(res => {
-            setupGuides(res.docs)
+        db.collection('guides').onSnapshot(snapshot => {
+            setupGuides(snapshot.docs)
         }) 
     } else {
         setupUI(null)
@@ -46,5 +46,20 @@ logIn.addEventListener('submit', function(e) {
         const modal = document.querySelector('#modal-login')
         M.Modal.getInstance(modal).close()
         signUp.reset()
+    })
+})
+
+
+const createForm = document.querySelector('#create-form')
+createForm.addEventListener('submit', function(e) {
+    e.preventDefault()
+    const title = createForm['title'].value
+    const content = createForm['content'].value
+
+    db.collection('guides').add({title : title, content : content})
+    .then(() => {
+        const modal = document.querySelector('#modal-create')
+        M.Modal.getInstance(modal).close()
+        createForm.reset()
     })
 })

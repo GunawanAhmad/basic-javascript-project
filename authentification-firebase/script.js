@@ -4,6 +4,9 @@ const logInlLinks = document.querySelectorAll('.logged-in')
 
 const setupUI = (user) => {
   if(user) {
+    const detail = document.querySelector('.account-details')
+    detail.innerHTML = user.email
+
     logOutlLinks.forEach(elm => {
       elm.style.display = 'none'
     })
@@ -11,6 +14,9 @@ const setupUI = (user) => {
       elm.style.display = 'block'
     })
   } else {
+    const detail = document.querySelector('.account-details')
+    detail.innerHTML = ''
+
     logOutlLinks.forEach(elm => {
       elm.style.display = 'block'
     })
