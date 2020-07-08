@@ -1,11 +1,19 @@
 const guides = document.querySelector('.guides')
 const logOutlLinks = document.querySelectorAll('.logged-out')
 const logInlLinks = document.querySelectorAll('.logged-in')
+const detail = document.querySelector('.account-details')
 
 const setupUI = (user) => {
   if(user) {
-    const detail = document.querySelector('.account-details')
-    detail.innerHTML = user.email
+    db.collection('users').doc(user.uid).get().then(doc => {
+      console.log(doc.data())
+      const html = `
+        <div>Logged in as ${user.email}</div>
+        <div>${doc.data().bio}</div>
+      `
+      detail.innerHTML = html
+    })
+   
 
     logOutlLinks.forEach(elm => {
       elm.style.display = 'none'
