@@ -1,0 +1,34 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.scroll {
+	height: 120vh;
+}
+
+.scroll h1 {
+	text-align: center;
+}
+
+.fade-in {
+	padding: 50px;
+	opacity: 0;
+	transition: opacity 1s ease-in;
+}
+
+.fade-in.appear {
+	opacity: 1;
+}
+
+.slide-in {
+	padding: 50px;
+	transform: translateX(-50%);
+	transition: opacity 0.7s ease-in, transform 0.7s ease-in;
+	opacity: 0;
+}
+
+.slide-in.appear {
+	transform: translateX(0);
+	opacity: 1;
+}
