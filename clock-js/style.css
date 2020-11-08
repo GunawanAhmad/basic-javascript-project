@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock {
+    position: relative;
+    height: 500px;
+    width: 500px;
+    /* background-color: lightpink; */
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.hand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+}
+
+.hand.hour {
+    width: 10px;
+    height: 35%;
+    background-color: black;
+    transform: rotate(0deg);
+    transform-origin: top;
+    position: relative;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: 99;
+    
+}
+
+.hand.second::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: black;
+    top: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    transform-origin: center;
+}
+
+.hand.minute {
+    width: 6px;
+    height: 40%;
+    background-color: black;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transform-origin: top;
+    transform: rotate(0deg);
+}
+
+.hand.second {
+    width: 3px;
+    height: 43%;
+    background-color: red;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transform-origin: top;
+    transform: rotate(0deg);
+}
+
+.number {
+    position: absolute;
+    top: 0;
+    /* left: 50%; */
+    font-size: 2rem;
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-weight: 800;
+}
+
+.number1 {
+    transform: rotate(30deg);
+}
+
+.number2 {
+    transform: rotate(60deg);
+}
+
+.number3 {
+    transform: rotate(90deg);
+}
+.number3 span {
+    display: block;
+    transform: rotate(270deg);
+}
+
+.number4 {
+    transform: rotate(120deg);
+}
+.number4 span {
+    display: block;
+    transform: rotate(180deg);
+}
+
+.number5 {
+    transform: rotate(150deg);
+}
+.number5 span {
+    display: block;
+    transform: rotate(180deg);
+}
+
+.number6 {
+    transform: rotate(180deg);
+}
+.number6 span {
+    display: block;
+    transform: rotate(180deg);
+}
+
+.number7 {
+    transform: rotate(210deg);
+}
+.number7 span {
+    display: block;
+    transform: rotate(180deg);
+}
+
+.number8 {
+    transform: rotate(240deg);
+}
+.number9 {
+    transform: rotate(270deg);
+}
+.number9 span {
+    display: block;
+    transform: rotate(90deg);
+}
+
+.number10 {
+    transform: rotate(300deg);
+}
+
+.number11 {
+    transform: rotate(330deg);
+}
